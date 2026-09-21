@@ -1,8 +1,7 @@
 .venv/
 __pycache__/
 *.py[cod]
-outputs/logs/
-outputs/transport/
+outputs/
 thirdparty/ros_ws/build/
 thirdparty/ros_ws/install/
 thirdparty/ros_ws/log/
