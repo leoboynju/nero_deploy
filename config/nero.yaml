@@ -1,0 +1,57 @@
+policy:
+  host: 192.168.1.54
+  port: 8000
+  prompt: "Put the object in the backpack and zip it up. Use both arms."
+  image_size: 224
+  rtc:
+    enabled: true
+    execution_horizon: 8
+    trigger_horizon: 8
+
+cameras:
+  width: 640
+  height: 480
+  fps: 30
+  warmup_seconds: 5
+  auto_exposure: true
+  exposure_us: null
+  left_wrist:
+    serial: "261822075208"
+  right_wrist:
+    serial: "261622075978"
+  third_person:
+    serial: "261722074322"
+
+arms:
+  left:
+    can: can3
+  right:
+    can: can2
+  bitrate: 1000000
+
+control:
+  hz: 30
+  max_steps: 2000
+  max_episode_seconds: 0
+  max_joint_step: 0.3
+  joint_limit_margin: 0.01
+  max_source_age: 0.25
+  chunk_steps: 16
+  gripper_confirm_steps: 2
+  grasp:
+    enabled: true
+    confirm_seconds: 0.08
+    min_hold_seconds: 0.30
+    reach_tolerance_rad: 0.025
+    reach_stable_seconds: 0.06
+    reach_timeout_seconds: 1.5
+    close_timeout_seconds: 1.0
+    settle_seconds: 0.12
+    closed_width_m: 0.005
+    contact_force_n: 0.5
+  action_trace:
+    enabled: true
+    output_dir: outputs/action_traces
+  joint_ema:
+    enabled: true
+    alpha: 0.35
